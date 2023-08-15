@@ -37,6 +37,8 @@
   {{- end }}
 </div>
 
+{{ if .Site.Params.katex }} {{ partial "katex.html" . }} {{ end }}
+
 {{ if hugo.IsProduction }}
 {{ template "_internal/google_analytics.html" . }}
 {{ end  }}
