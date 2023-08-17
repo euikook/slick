@@ -1,2 +1,9 @@
 <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
 
+{{if hugo.IsProduction }}
+{{ with .Site.Params.adsense.id }}
+
+<script async  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1494649960951277" crossorigin="anonymous"></script>
+
+{{ end }}
+{{ end }}
