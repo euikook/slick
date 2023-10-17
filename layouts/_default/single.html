@@ -3,13 +3,23 @@
 <div>
   {{- if $showmeta }}
   <div>
-    <h2 class="post-title">
-      {{ if .Draft }}DRAFT: {{ end }}
-      {{ .Title }}
-    </h2>
+    <div>
+      <h2 class="post-title">
+        {{ if .Draft }}DRAFT: {{ end }}
+        {{ .Title }}
+      </h2>
+      <div class="post-author">
+        By <a href="/about.html">euikook</a>
+      </div>
+    </div>
     {{ partial "post_meta.html" . }}
   </div>
   {{- end }}
+  <div>
+    {{ if and (isset .Params "banner") (not (eq .Params.banner "")) }}
+      <img src="{{ .Params.banner | absURL }}" class="article-banner">
+    {{ end }}
+  </div>
   <div>
     {{ .Content }}
   </div>

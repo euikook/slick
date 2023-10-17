@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/spookey/slick#readme",
   "dependencies": {
+    "postcss": "^8.4.31",
     "purecss": "^3.0.0",
     "source-code-pro": "^2.38.0",
     "source-sans": "^3.46.0",
