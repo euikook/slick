@@ -157,6 +157,8 @@ figure { text-align: center; }
 figure img { margin: 0 auto; }
 
 
+img[src$='.svg'] { width: 100vw; }
+
 h1, h2, h3, h4, h5, h6, .post-title {
     font-family: "Noto Sans KR", serif;
     font-weight: bold;
