@@ -4,6 +4,7 @@
 <div class="post-meta">
   <div>
   {{- if $showdate }}
+    {{- if .Date }}
     <div>
       <span>Created</span> &#x5b;
       <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
@@ -11,6 +12,7 @@
       </time>
       &#x5d;
     <div>
+    {{ end }}
     
     {{- if ne .Date .Lastmod }}
       <div>

@@ -29,7 +29,12 @@
     <div class="pure-menu pure-menu-horizontal">
       <ul class="pure-menu-list">
         <li class="pure-menu-item pure-menu-disabled">
-          &copy; {{ now.Format "2006" }} &mdash; {{ . }}
+          &copy; {{ now.Format "2006" }} 
+          &mdash; 
+          {{- with $.Site.Author.bio }}<a href="{{.}}">{{end}}
+          {{- with $.Site.Author.name }} {{ . }} {{ end }} 
+          {{- with $.Site.Author.bio }}</a>{{end}}
+          &mdash; {{ . }}
         </li>
       </ul>
     </div>

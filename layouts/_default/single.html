@@ -8,9 +8,11 @@
         {{ if .Draft }}DRAFT: {{ end }}
         {{ .Title }}
       </h2>
+      {{ if  not .Params.standalone }}
       <div class="post-author">
-        By <a href="/about.html">euikook</a>
+        By <a href="/about">euikook</a>
       </div>
+      {{ end }}
     </div>
     {{ partial "post_meta.html" . }}
   </div>
@@ -20,11 +22,13 @@
       <img src="{{ .Params.banner | absURL }}" class="article-banner">
     {{ end }}
   </div>
-  <div>
+  <div class="post-content">
     {{ .Content }}
   </div>
 </div>
 
+{{ if  not .Params.standalone }}
 {{ partial "utterances" . }}
+{{ end }}
 
 {{- end }}

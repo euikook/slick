@@ -17,7 +17,7 @@
     {{ partial "post_meta.html" . }}
   </div>
   {{- end }}
-  <div>
+  <div class="post-content">
     {{ cond $showfull .Content .Summary }}
   </div>
 </div>
