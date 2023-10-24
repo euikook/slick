@@ -157,7 +157,19 @@ figure { text-align: center; }
 figure img { margin: 0 auto; }
 
 
-img[src$='.svg'] { width: 98vw; max-width: 800px;}
+
+@media screen and (max-device-width: 800px) {
+    img[src$='.svg'] { 
+        width: 98vw; 
+    }
+}
+
+@media screen and (min-device-width: 801px) {
+    img[src$='.svg'] { 
+        width: 98vw; 
+        max-width: 800px;
+    }
+}
 
 h1, h2, h3, h4, h5, h6, .post-title {
     font-family: "Noto Sans KR", serif;
