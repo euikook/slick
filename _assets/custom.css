@@ -158,16 +158,16 @@ figure img { margin: 0 auto; }
 
 
 
-@media screen and (max-device-width: 800px) {
+@media screen and (max-width: 800px) {
     img[src$='.svg'] { 
         width: 98vw; 
     }
 }
 
-@media screen and (min-device-width: 801px) {
+@media screen and (min-width: 801px) {
     img[src$='.svg'] { 
         width: 98vw; 
-        max-width: 800px;
+        max-width: 98%;
     }
 }
 
