@@ -11,7 +11,7 @@
         {{ .Date.Format (default "02 Jan 06 15:04 MST" .Site.Params.dateFmt) }}
       </time>
       &#x5d;
-    <div>
+    </div>
     {{ end }}
     
     {{- if ne .Date .Lastmod }}
@@ -21,7 +21,7 @@
           {{ .Lastmod.Format (default "02 Jan 06 15:04 MST" .Site.Params.dateFmt) }}
         </time>
         &#x5d;
-      <div>
+      </div>
     {{- end }}
   {{- end }}
   </div>

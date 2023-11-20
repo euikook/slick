@@ -2,14 +2,17 @@
 {{- $showfull := default false $.Site.Params.showFullContent }}
 {{- $pagepool := where $.Site.RegularPages "Type" "in" $.Site.Params.mainSections }}
 {{- range $idx, $_ := (.Paginate $pagepool).Pages }}
-<div{{ if and $showfull $idx }} class="post-divider"{{ end }}>
+
+<div {{ if and $showfull }} class="post-divider" {{ end }}>
   {{- if default (default true $.Site.Params.showMeta) .Params.showmeta }}
   <div>
     <div>
+
       <h2 class="post-title">
         {{ if .Draft }}DRAFT: {{ end }}
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
       </h2>
+
       <div class="post-author">
         By <a href="/about">{{ .Site.Author.name }}</a>
       </div>
@@ -17,10 +20,13 @@
     {{ partial "post_meta.html" . }}
   </div>
   {{- end }}
+
   <div class="post-content">
     {{ cond $showfull .Content .Summary }}
   </div>
+
 </div>
+
 {{- end }}
 {{ partial "pagination.html" . }}
 {{- end }}
