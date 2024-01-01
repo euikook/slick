@@ -34,7 +34,7 @@
   {{- with .Site.Params.css }}
     {{- if resources.Get . }}
       {{- $styleCustom := resources.Get . | resources.Fingerprint }}
-  <link rel="stylesheet" href="{{ $styleCustom.RelPermalink }}" />
+    <link rel="stylesheet" href="{{ $styleCustom.RelPermalink }}" />
     {{- else if fileExists (path.Join "static" .) }}
   <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}" />
     {{- end }}

@@ -12,10 +12,6 @@
         {{ if .Draft }}DRAFT: {{ end }}
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
       </h2>
-
-      <div class="post-author">
-        By <a href="/about">{{ .Site.Author.name }}</a>
-      </div>
     </div>
     {{ partial "post_meta.html" . }}
   </div>

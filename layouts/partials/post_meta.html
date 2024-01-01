@@ -1,20 +1,36 @@
 {{- $showdate := default (default false $.Site.Params.showMetaDates) .Params.showmetadates }}
 {{- $showlink := default (default false $.Site.Params.showMetaLinks) .Params.showmetalinks }}
 {{- if or $showdate $showlink }}
+
+
 <div class="post-meta">
-  <div>
+  <div style="display:inline-block">
   {{- if $showdate }}
-    {{- if .Date }}
-    <div>
-      <span>Created</span> &#x5b;
-      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-        {{ .Date.Format (default "02 Jan 06 15:04 MST" .Site.Params.dateFmt) }}
+
+    {{- $dateFormat := ( .Site.Params.settings.dateFormat | default "2006, Jan 02" ) -}}
+    <span class='posted-on'>
+      {{ partial "icons/icons.html" "calendar" }}
+      
+      <span class='screen-reader-text' style="display:inline-block"> </span>
+      
+      <time class='entry-date' datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}' style="display:inline-block">
+        {{- .Date.Format $dateFormat -}}
       </time>
-      &#x5d;
-    </div>
-    {{ end }}
+    </span>
+
+
+    <span>
+      {{ partial "icons/icons.html" "pen-nib" }}
+      <span class='screen-reader-text' style="display:inline-block"> euikook</span>
+    </span>
+
+    <span>
+      {{ partial "icons/icons.html" "clock-five" }}
+      <span class='screen-reader-text' style="display:inline-block">{{ .ReadingTime }} mins read</span>
+    </span>
+
     
-    {{- if ne .Date .Lastmod }}
+    {{/* {{- if ne .Date .Lastmod }}
       <div>
         <span>Last modified</span> &#x5b;
         <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
@@ -22,12 +38,12 @@
         </time>
         &#x5d;
       </div>
-    {{- end }}
+    {{- end }} */}}
   {{- end }}
   </div>
 
   
-  {{- if $showlink }}
+  {{/* {{- if $showlink }}
     {{- $fallback := slice (dict "Identifier" "Categories") (dict "Identifier" "Series") (dict "Identifier" "Tags") }}
     {{- range default $fallback .Site.Menus.meta }}
       <div>
@@ -44,6 +60,6 @@
       {{- end }}
       </div>
     {{- end }}
-  {{- end }}
+  {{- end }} */}}
 </div>
 {{- end }}

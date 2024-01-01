@@ -1,0 +1,6 @@
+<span class="inline-svg" >
+{{- $fname:=print "icons/svg/" . ".svg" -}}
+{{- $path:="stroke=\"black\"" -}}
+{{- $fill:="stroke=\"currentColor\"" -}}
+{{ replace (partialCached $fname .) $path $fill | safeHTML }}
+</span>
