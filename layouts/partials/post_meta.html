@@ -9,24 +9,23 @@
 
     {{- $dateFormat := ( .Site.Params.settings.dateFormat | default "2006, Jan 02" ) -}}
     <span class='posted-on'>
-      {{ partial "icons/icons.html" "calendar" }}
+      {{ partial "icons/icons.html" "calendar-pen" }}
       
-      <span class='screen-reader-text' style="display:inline-block"> </span>
-      
-      <time class='entry-date' datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}' style="display:inline-block">
-        {{- .Date.Format $dateFormat -}}
-      </time>
-    </span>
-
-
-    <span>
-      {{ partial "icons/icons.html" "pen-nib" }}
-      <span class='screen-reader-text' style="display:inline-block"> euikook</span>
+      <span class='post-meta-label'> 
+        <time  class="timeago" datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}' 
+               title='{{ .Date.Format "2006-01-02" }}'>
+        </time>
+      </span>
     </span>
 
     <span>
-      {{ partial "icons/icons.html" "clock-five" }}
-      <span class='screen-reader-text' style="display:inline-block">{{ .ReadingTime }} mins read</span>
+      {{ partial "icons/icons.html" "person-edit" }}
+      <span class='post-meta-label'> euikook</span>
+    </span>
+
+    <span>
+      {{ partial "icons/icons.html" "schedule" }}
+      <span class='post-meta-label'>{{ .ReadingTime }} mins read</span>
     </span>
 
     
