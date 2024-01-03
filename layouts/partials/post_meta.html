@@ -2,7 +2,6 @@
 {{- $showlink := default (default false $.Site.Params.showMetaLinks) .Params.showmetalinks }}
 {{- if or $showdate $showlink }}
 
-
 <div class="post-meta">
   <div style="display:inline-block">
   {{- if $showdate }}
